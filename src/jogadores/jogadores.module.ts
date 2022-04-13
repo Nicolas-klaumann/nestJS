@@ -1,17 +1,9 @@
 import { Module, Post } from '@nestjs/common';
 import { JogadoresController } from './jogadores.controller';
+import { JogadoresService } from './jogadores.service';
 
 @Module({
-  controllers: [JogadoresController]
+  controllers: [JogadoresController],
+  providers: [JogadoresService]
 })
-export class JogadoresModule {
-
-    @Post()
-    async criarAtualizarJogadr()
-    {
-        return JSON.stringify({
-            "nome": "Nicolas"
-        })
-    }
-
-}
+export class JogadoresModule {}
